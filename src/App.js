@@ -10,7 +10,7 @@ const surveyJson = {
   elements: [
     {
       name: "FirstName",
-      title: "Enter your first name:",
+      title: "Enter your first names:",
       type: "text"
     },
     {
