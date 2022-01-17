@@ -7,20 +7,20 @@ import axios from "axios";
 
 StylesManager.applyTheme("modern");
 
-const basicJson = {
-  elements: [
-    {
-      name: "FirstName",
-      title: "Enter your first names:",
-      type: "text"
-    },
-    {
-      name: "LastName",
-      title: "Enter your last name:",
-      type: "text"
-    }
-  ]
-};
+// const basicJson = {
+//   elements: [
+//     {
+//       name: "FirstName",
+//       title: "Enter your first names:",
+//       type: "text"
+//     },
+//     {
+//       name: "LastName",
+//       title: "Enter your last name:",
+//       type: "text"
+//     }
+//   ]
+// };
 
 function App() {
   const [surveyJSON, setSurveyJSON] = useState({});
@@ -31,6 +31,7 @@ function App() {
       "https://api.surveyjs.io/public/Survey/getSurvey?surveyId=af7ca1cb-84ff-4005-a034-bd34ddd08c23"
     ).then((json) => {
       setSurveyJSON(json.data);
+      console.log("json.data:", json.data);
       survey = new Model(json.data);
       setLoading(false);
       //displaySurvey();
